@@ -47,7 +47,7 @@ shape.area = compute_area([shape.X,shape.Y,shape.Z],shape.TRIV);
 errs = errs./sqrt(shape.area);
 
 % quantization
-n_samples = 1001;
+n_samples = 101;
 x = linspace(0,params.x_max,n_samples)';
 y = zeros(n_samples,1);
 for h = 1:n_samples

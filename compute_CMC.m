@@ -12,7 +12,7 @@ function [x,y] = compute_CMC(errs,idxs,varargin)
 %
 
 if isempty(varargin)
-    nn_max = 100;
+    nn_max = 101;
 else
     params = varargin{1};
     nn_max = params.nn_max;
