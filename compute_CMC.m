@@ -18,18 +18,14 @@ else
     nn_max = params.nn_max;
 end
 
-tic
 [~,idxs_nn] = sort(errs,2,'ascend');
 idxs_nn = idxs_nn(:,1:nn_max);
-fprintf('\t%f\n',toc)
 
-tic
 tmp_gt = abs(repmat(idxs.gt,1,nn_max)-idxs_nn);
 tmp_gt = bsxfun(@eq,tmp_gt,zeros(size(tmp_gt)));
 tmp_gt = cumsum(tmp_gt,2);
 tmp_gt = bsxfun(@gt,tmp_gt,zeros(size(tmp_gt)));
 y = mean(tmp_gt,1);
-fprintf('\t%f\n',toc)
 
 if isfield(idxs,'gt_sym')
     
