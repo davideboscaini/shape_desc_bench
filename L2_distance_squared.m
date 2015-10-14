@@ -51,7 +51,7 @@ if (size(a,1) ~= size(b,1))
    error('A and B should be of same dimensionality');
 end
 
-if ~(isreal(a)*isreal(b))
+if ~(isreal(a) * isreal(b))
    disp('Warning: running distance.m with imaginary numbers.  Results may be off.'); 
 end
 
@@ -60,11 +60,10 @@ if (size(a,1) == 1)
   b = [b; zeros(1,size(b,2))]; 
 end
 
-aa=sum(a.*a); bb=sum(b.*b); ab=a'*b; 
-d = repmat(aa',[1 size(bb,2)]) + repmat(bb,[size(aa,2) 1]) - 2*ab;
-
-% make sure result is all real
-d = real(d); 
+aa = sum(a.*a); 
+bb = sum(b.*b); 
+ab = a'*b; 
+d  = repmat(aa',[1 size(bb,2)]) + repmat(bb,[size(aa,2) 1]) - 2*ab;
 
 % force 0 on the diagonal? 
 if (df==1)
