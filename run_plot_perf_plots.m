@@ -65,14 +65,14 @@ for idx_desc = 1:n_descs
     end
 end
 hold off;
-xlim([1e-03,1]);
+xlim([1e-04,1]);
 ylim([0,1]);
 axis square;
 grid on;
 set(gcf,'color','white');
-set(gca,'XLim',[1e-03,1])
-set(gca,'XTick',[1e-03,1e-02,1e-01,1]);
-set(gca,'XTickLabel',{'0.001','0.01','0.1','1'});
+set(gca,'XLim',[1e-04,1])
+set(gca,'XTick',[1e-04,1e-03,1e-02,1e-01,1]);
+set(gca,'XTickLabel',{'0.0001','0.001','0.01','0.1','1'});
 xlabel('false positive rate');
 ylabel('true positive rate');
 cleanfigure;

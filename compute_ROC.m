@@ -32,7 +32,11 @@ y_ = 1-fn;
 
 %
 n_samples = 101;
-x = linspace(min(x_),max(x_),n_samples)';
+tol = 1e-08;
+x = linspace(min(x_)+tol,max(x_),n_samples)';
+x = normpdf(x,min(x),0.1);
+%x = (x-min(x));
+%x = x./max(x);
 y = interp1q(x_,y_,x);
 
 end
