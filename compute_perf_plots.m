@@ -78,7 +78,7 @@ for idx_query = 1:length(idxs.query)
                     [x{idx_curve}(:,count),y{idx_curve}(:,count)] = compute_ROC(errs,idxs);
                 elseif strcmp(params.curves(idx_curve),'Kim')
                     % load the shape
-                    tmp = load(fullfile(paths.dataset,name_target));
+                    tmp = load(fullfile(paths.shapes,name_target));
                     shape_target = tmp.shape;
                     % load the geodesic distances
                     tmp = load(fullfile(paths.geods,name_target));
