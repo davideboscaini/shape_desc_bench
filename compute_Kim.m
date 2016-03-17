@@ -40,11 +40,12 @@ elseif strcmp(params.geod_error,'soft')
     
 end
 
-% compute the area of the shape
-shape.area = compute_area([shape.X,shape.Y,shape.Z],shape.TRIV);
-
-% normalize the error by the shape area
-errs = errs./sqrt(shape.area);
+if isfield(shape,'TRIV')
+    % compute the area of the shape
+    shape.area = compute_area([shape.X,shape.Y,shape.Z],shape.TRIV);
+    % normalize the error by the shape area
+    errs = errs./sqrt(shape.area);    
+end
 
 % quantization
 n_samples = 100;
