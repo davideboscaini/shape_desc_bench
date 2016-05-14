@@ -31,6 +31,7 @@ if strcmp(params.geod_error,'hard')
             geods(sub2ind(size(geods),idxs.pred,idxs.gt)),...
             geods(sub2ind(size(geods),idxs.pred,idxs.gt_sym))...
             );
+        fprintf('[i] computing *symmetric* curves\n');
     end
     
 elseif strcmp(params.geod_error,'soft')
